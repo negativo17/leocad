@@ -54,7 +54,6 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %doc docs/README.txt docs/CREDITS.txt
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/doc/%{name}
 %{_datadir}/icons/hicolor/scalable/mimetypes/application-vnd.%{name}.svg
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/metainfo/%{name}.appdata.xml
