@@ -18,7 +18,9 @@ Source0:    https://github.com/leozide/%{name}/archive/%{commit0}.tar.gz#/%{name
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
-BuildRequires:  qt5-devel
+BuildRequires:  qt5-qtbase-devel
+BuildRequires:  qt5-linguist
+BuildRequires:  zlib-devel
 
 Requires:       ldraw
 
