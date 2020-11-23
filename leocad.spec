@@ -1,24 +1,26 @@
 %global commit0 8d4a9644b55a9fa8bc2d3f7633335d8b9b2e8279
 %global date 20201114
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-#global tag %{version}
+%global tag %{version}
 
 Name:       leocad
-Version:    19.07.1
-Release:    2%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
+Version:    21.03
+Release:    1%{?dist}
 Summary:    Visual brick construction tool for kids
 License:    GPLV2+
 URL:        http://www.leocad.org
 
 %if 0%{?tag:1}
-Source0:    https://codeload.github.com/leozide/%{name}/tar.gz/v%{version}#/%{name}-%{version}.tar.gz
+Source0:    https://github.com/leozide/leocad/archive/refs/tags/v%{version}.tar.gz/#/%{name}-%{version}.tar.gz
 %else
 Source0:    https://github.com/leozide/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 %endif
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
-BuildRequires:  qt5-devel
+BuildRequires:  qt5-qtbase-devel
+BuildRequires:  qt5-linguist
+BuildRequires:  zlib-devel
 
 Requires:       ldraw
 
@@ -36,7 +38,10 @@ companies which does not sponsor, authorize or endorse this software.
 %endif
 
 %build
-%qmake_qt5 LDRAW_LIBRARY_PATH=%{_datadir}/ldraw DISABLE_UPDATE_CHECK=1
+%qmake_qt5 \
+  LDRAW_LIBRARY_PATH=%{_datadir}/ldraw \
+  DISABLE_UPDATE_CHECK=1
+
 %make_build
 
 %install
@@ -54,13 +59,16 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %doc docs/README.txt docs/CREDITS.txt
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/scalable/mimetypes/application-vnd.%{name}.svg
+%{_datadir}/icons/hicolor/*/apps/%{name}.*
+%{_datadir}/icons/hicolor/*/mimetypes/application-vnd.%{name}.*
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/metainfo/%{name}.appdata.xml
-%{_datadir}/pixmaps/%{name}.png
 %{_mandir}/man1/%{name}.*
 
 %changelog
+* Thu Apr 15 2021 Simone Caronni <negativo17@gmail.com> - 21.03-1
+- Update to 21.03.
+
 * Sun Nov 22 2020 Simone Caronni <negativo17@gmail.com> - 19.07.1-2.20201114git8d4a964
 - Update to latest snapshot.
 
