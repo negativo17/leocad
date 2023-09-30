@@ -4,7 +4,7 @@
 %global tag %{version}
 
 Name:       leocad
-Version:    21.06
+Version:    23.03
 Release:    1%{?dist}
 Summary:    Visual brick construction tool for kids
 License:    GPLV2+
@@ -66,6 +66,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/%{name}.*
 
 %changelog
+* Sat Sep 30 2023 Simone Caronni <negativo17@gmail.com> - 23.03-1
+- Update to 23.03.
+
 * Fri Sep 17 2021 Simone Caronni <negativo17@gmail.com> - 21.06-1
 - Update to 21.06.
 
