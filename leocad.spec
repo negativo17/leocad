@@ -1,11 +1,11 @@
-%global commit0 da803dc315feefc923ec4234f9fa05b28fc5c85b
-%global date 20240924
+%global commit0 228fb79667b68ed5c002649c4f7b525d49d48580
+%global date 20250224
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 #global tag %{version}
 
 Name:       leocad
 Version:    23.03%{!?tag:^%{date}git%{shortcommit0}}
-Release:    4%{?dist}
+Release:    5%{?dist}
 Summary:    Visual brick construction tool for kids
 License:    GPLV2+
 URL:        http://www.leocad.org
@@ -66,6 +66,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/%{name}.*
 
 %changelog
+* Thu Mar 13 2025 Simone Caronni <negativo17@gmail.com> - 23.03^20250224git228fb79-5
+- Update to latest snapshot, trim changelog.
+
 * Thu Sep 26 2024 Simone Caronni <negativo17@gmail.com> - 23.03^20240924gitda803dc-4
 - Update to latest snapshot.
 - Use new packaging guidelines format for snapshots.
@@ -75,18 +78,3 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 * Tue Mar 05 2024 Simone Caronni <negativo17@gmail.com> - 23.03-2.20240303gitb6de368
 - Update to latest snapshot.
-
-* Sat Sep 30 2023 Simone Caronni <negativo17@gmail.com> - 23.03-1
-- Update to 23.03.
-
-* Fri Sep 17 2021 Simone Caronni <negativo17@gmail.com> - 21.06-1
-- Update to 21.06.
-
-* Thu Apr 15 2021 Simone Caronni <negativo17@gmail.com> - 21.03-1
-- Update to 21.03.
-
-* Sun Nov 22 2020 Simone Caronni <negativo17@gmail.com> - 19.07.1-2.20201114git8d4a964
-- Update to latest snapshot.
-
-* Thu Jan 23 2020 Simone Caronni <negativo17@gmail.com> - 19.07.1-1.20200121git3b8b224
-- First build.
