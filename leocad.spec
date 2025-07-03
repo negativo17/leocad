@@ -1,11 +1,11 @@
-%global commit0 ed24c15b202b5dfbe5dce5b595e5e32ded82745d
-%global date 20250627
+%global commit0 7287b621fa7de8c328eae7da2de7628aef6ee347
+%global date 20250702
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 #global tag %{version}
 
 Name:       leocad
 Version:    23.03%{!?tag:^%{date}git%{shortcommit0}}
-Release:    6%{?dist}
+Release:    7%{?dist}
 Summary:    Visual brick construction tool for kids
 License:    GPLV2+
 URL:        http://www.leocad.org
@@ -66,6 +66,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/%{name}.*
 
 %changelog
+* Thu Jul 03 2025 Simone Caronni <negativo17@gmail.com> - 23.03^20250702git7287b62-7
+- Update to latest snapshot.
+
 * Fri Jun 27 2025 Simone Caronni <negativo17@gmail.com> - 23.03^20250627gited24c15-6
 - Update to latest snapshot.
 
